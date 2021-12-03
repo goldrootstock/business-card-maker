@@ -1,13 +1,13 @@
-
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import firebase from 'firebase';
 const firebaseConfig = {
-    apiKey: "AIzaSyATGhyCWWtUY5q10iNzLmTdSmGxsotRdQU",
-    authDomain: "business-card-maker-73cc2.firebaseapp.com",
-    projectId: "business-card-maker-73cc2",
-    databaseURL: "https://business-card-maker-73cc2-default-rtdb.firebaseio.com/",
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+export default firebaseApp;
+
