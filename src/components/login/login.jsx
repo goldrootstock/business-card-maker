@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import styles from './login.module.css';
@@ -21,7 +21,7 @@ const Login = ({ authService }) => {
 
   useEffect(() => {
     authService.onAuthChange(user => {
-      user && goToMaker(user.uid);
+      user && goToMaker(user.id);
     });
   });
 
